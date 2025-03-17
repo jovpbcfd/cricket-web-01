@@ -4,7 +4,7 @@ import { matches } from "@/data/match"
 export default function Page() {
     return (
         <div className="p-6">
-            <h2 className="text-2xl font-bold mb-4">Today's matches</h2>
+            <h2 className="text-2xl font-bold mb-4">Today&apos;s matches</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {matches.map((match) => (
                     <Link key={match.id} href={`/matches/${match.id}`}>

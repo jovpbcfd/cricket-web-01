@@ -6,6 +6,7 @@ import { matches as staticMatch } from "@/data/match"
 
 export default function MatchList() {
     const router = useRouter();
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
     const [matches, setMatches] = useState<Array<any>>([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {

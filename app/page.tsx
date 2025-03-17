@@ -1,4 +1,3 @@
-// import HeroImage from '@/public/img/cricket-site-hero.webp'
 import Image from "next/image";
 
 import TeamPerformance from "@/components/team-perf";
