@@ -39,6 +39,7 @@ export default function Header() {
                         <nav className="hidden md:flex space-x-6">
                             <Link href="/" className="text-white hover:text-white/50">Home</Link>
                             <Link href="/news" className="text-white hover:text-white/50">News</Link>
+                            <Link href="/matches" className="text-white hover:text-white/50">Matches</Link>
                             {/* <Link href="/services" className="text-gray-700 hover:text-gray-900">Services</Link>
                             <Link href="/contact" className="text-gray-700 hover:text-gray-900">Contact</Link> */}
                         </nav>
@@ -55,6 +56,7 @@ export default function Header() {
                     <nav className="md:hidden bg-gradient-to-r from-[#57534e] to-[#282828] shadow-md absolute w-full left-0 top-16 flex flex-col space-y-4 p-4">
                         <Link href="/" className="text-white hover:text-white/50" onClick={() => setIsOpen(false)}>Home</Link>
                         <Link href="/news" className="text-white hover:text-white/50" onClick={() => setIsOpen(false)}>News</Link>
+                        <Link href="/matches" className="text-white hover:text-white/50" onClick={() => setIsOpen(false)}>Matches</Link>
                     </nav>
                 )}
             </header>
