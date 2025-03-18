@@ -1,5 +1,3 @@
-"use client"
-
 import { matches } from '@/data/match';
 
 export default function TeamStandings() {
