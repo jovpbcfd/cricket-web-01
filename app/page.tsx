@@ -102,7 +102,7 @@ export default function Home() {
       </section>
 
       <section className="max-w-[1500px] mx-auto py-4 px-2 rounded-md mt-10 md:py-1 md:px-4">
-        <h2 className="font-bold text-2xl mb-2 md:text-4xl md:mb-4">Stats</h2>
+        <h2 className="font-bold text-2xl mb-2 md:text-4xl md:mb-4">Standings</h2>
         <TeamStandings />
       </section>
 
