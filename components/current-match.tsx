@@ -50,16 +50,6 @@ export default function CurrentMatch() {
                     <p className="text-sm">STAY CONNECTED</p>
                     <p className="text-lg font-bold text-yellow-400">WITH RCB FAMILY</p>
                     <div className="flex justify-center space-x-4 mt-3">
-                        {/* <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Play_Store_badge_EN.svg"
-                            alt="Google Play"
-                            className="h-8"
-                        />
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg"
-                            alt="App Store"
-                            className="h-8"
-                        /> */}
                     </div>
                 </div>
 

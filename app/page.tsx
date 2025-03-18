@@ -16,12 +16,14 @@ export default function Home() {
               <p className="drop-shadow-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum laboriosam aliquam quas ipsum fuga molestias soluta inventore similique aliquid nulla?</p>
             </div> */}
             <div className="relative w-full h-full text-center p-2 md:w-[50%] flex items-center justify-center flex-col">
-              <h1 className="relative font-bold text-5xl mb-2 text-white px-4 py-2 bg-[#373737] rounded-md inline-block shadow-lg">
-                Best Live Cricket
-              </h1>
-              <p className="relative text-white px-3 py-1 bg-[#373737]/80 rounded-md mt-2 shadow-md">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum laboriosam aliquam quas ipsum fuga molestias soluta inventore similique aliquid nulla?
-              </p>
+              <div className="bg-[#373737]/80 p-2 rounded-md">
+                <h1 className="relative font-bold text-5xl mb-2 text-white px-4 py-2 rounded-md inline-block shadow-lg">
+                  Best Live Cricket
+                </h1>
+                <p className="relative text-white px-3 py-1 bg-[#373737]/80 rounded-md mt-2 shadow-md">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum laboriosam aliquam quas ipsum fuga molestias soluta inventore similique aliquid nulla?
+                </p>
+              </div>
             </div>
             <div className="md:sr-only"></div>
           </div>
@@ -42,7 +44,7 @@ export default function Home() {
               Featured
             </span>
             <Image src="/img/home-news-1.webp" alt="Bet" height={1000} width={574} className="absolute inset-0 z-[-5] w-full h-full object-cover" />
-            <div className="absolute bottom-3 left-3 md:text-3xl">
+            <div className="absolute bottom-3 left-3 bg-slate-950/50 rounded-md p-2 mr-3 md:text-3xl">
               <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, natus.</span>
               <span>Lorem ipsum dolor sit amet.</span>
               <span>Lorem ipsum dolor, sit amet consectetur adipisicing.</span>
