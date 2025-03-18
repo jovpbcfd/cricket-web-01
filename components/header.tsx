@@ -1,6 +1,6 @@
 'use client'
 
-
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -28,11 +28,11 @@ export default function Header() {
     return (
         <>
             <header className="bg-gradient-to-r from-[#57534e] to-[#282828] shadow-md relative w-full top-0 left-0 z-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 md:py-4 lg:px-8">
                     <div className="flex justify-between items-center h-16">
                         {/* Logo */}
                         <Link href="/">
-                            <span className="text-xl font-bold text-white">Logo</span>
+                            <Image src="/img/site-logo1.webp" alt="Logo" className="h-16" width={100} height={100} />
                         </Link>
 
                         {/* Desktop Navigation */}
