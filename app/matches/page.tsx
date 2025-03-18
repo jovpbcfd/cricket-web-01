@@ -33,7 +33,7 @@ export default function Page() {
                                 </div>
                             </div>
 
-                            <div className="mt-4 flex justify-center gap-2">
+                            <div className="mt-4 flex flex-col justify-center gap-2 md:flex-row">
                                 <button className="bg-[#282828] text-white px-4 py-1 rounded-md">Upcoming</button>
                                 <button className="bg-[#282828] text-white px-4 py-1 rounded-md">Highlights</button>
                                 <button className="bg-[#282828] text-white px-4 py-1 rounded-md">Details</button>
