@@ -1,14 +1,14 @@
 import Image from "next/image";
 
-import TeamStandings from "@/components/team-standing";
 import CurrentMatch from "@/components/current-match";
 import TeamPartners from "@/components/team-partners";
 import MatchList from "@/components/match-list";
+import { players } from "@/data/players";
 
 export default function Home() {
   return (
     <>
-      <section className="max-w-[1800px] mx-auto py-4 px-2 md:py-8 md:px-4">
+      <section className="max-w-[1500px] mx-auto py-4 px-2 md:py-8 md:px-4">
         <div className="flex flex-col gap-2 md:flex-row md:gap-5">
           <div className='w-full bg-[url(/img/home-hero.webp)] bg-no-repeat  w-full rounded-md md:flex-row md:w-[70%] md:items-center shadow-md md:h-[574px]'>
             {/* <div className="w-full h-full text-center p-2 md:w-[50%] flex items-center justify-center flex-col">
@@ -31,13 +31,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-[1500px] mx-auto py-4 px-2  rounded-md md:py-1 md:px-4 md:mt-3">
-        <h2 className="font-bold text-2xl mb-2 md:text-4xl md:mb-4">Live matches</h2>
-        <MatchList />
+      <section className="bg-[#DDDDDDBF] py-4 px-2 md:py-10 md:px-4">
+        <div className="max-w-[1500px] mx-auto rounded-md md:mt-3">
+          <h2 className="font-bold text-[#8B0000] uppercase text-2xl mb-2 md:text-4xl md:mb-10">Live matches</h2>
+          <MatchList />
+        </div>
       </section>
 
       <section className="max-w-[1500px] mx-auto py-4 px-2 rounded-md md:py-1 md:px-4 md:mt-5">
-        <h2 className="font-bold text-2xl mb-2 md:text-4xl md:mb-4">Latest News</h2>
+        <h2 className="font-bold text-2xl text-[#8B0000] uppercase mb-2 md:text-4xl md:mb-4">Latest News</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-3 md:grid-rows-2 gap-2 w-full h-[500px] md:h-[600px]">
           <div className="relative overflow-hidden m-2 rounded-md md:row-span-3">
             <span className="hidden absolute bg-cyan-500 p-1 font-bold top-0 left-0 md:block">
@@ -57,8 +59,8 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="font-bold text-xl md:text-2xl">News title</h3>
-              <p className="w-full md:w-[70%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, iure unde molestiae dolorum iste ab!</p>
+              <h3 className="font-bold text-xl text-[#282828] md:text-2xl">News title</h3>
+              <p className="w-full text-black md:w-[70%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, iure unde molestiae dolorum iste ab!</p>
             </div>
           </div>
           <div className="flex flex-row p-2 gap-2 items-center md:flex-col md:gap-0 md:items-start">
@@ -67,45 +69,70 @@ export default function Home() {
               <span className="hidden absolute bg-cyan-500 p-1 font-bold left-0 top-0 text-white md:block">February 13, 2025</span>
             </div>
             <div>
-              <h3 className="font-bold text-xl md:text-2xl">News title</h3>
-              <p className="w-full md:w-[70%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, iure unde molestiae dolorum iste ab!</p>
+              <h3 className="font-bold text-xl text-[#282828] md:text-2xl">News title</h3>
+              <p className="w-full text-black md:w-[70%]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, iure unde molestiae dolorum iste ab!</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="max-w-[1500px] mx-auto py-4 px-2 rounded-md md:py-1 md:px-4 md:mt-5">
-        <h2 className="font-bold text-2xl mb-2 md:text-4xl md:mb-4">About us</h2>
-        <div>
-          <p className="mb-2">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, alias veritatis? Provident nobis consectetur, dicta dignissimos maxime fugiat officiis deleniti.
-          </p>
-          <p className="mb-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, consectetur animi. Quam dolores accusantium impedit unde? Dignissimos sapiente nam maiores repudiandae ipsum quis eligendi aliquid numquam dicta minus, sint tenetur ab? Blanditiis sed illum recusandae modi tempora laudantium dolor itaque vero non hic, ab nulla molestiae,
-            eaque est esse voluptatem error! Omnis eaque, culpa at consectetur illum vel porro distinctio.
-          </p>
-          <div className="flex flex-col-reverse md:flex-row md:gap-5">
-            <div className="w-full md:w-[70%]">
-              <div className="relative overflow-hidden text-white/50 w-full h-[200px] flex items-center justify-center mb-4 rounded-md md:h-[400px]">
-                <Image src="/img/home-about.webp" alt="about here" width={1000} height={574} className="absolute w-full h-full object-cover" />
+      <section className="bg-[#DDDDDDBF] py-4 px-2 rounded-md md:py-10 md:px-4 md:mt-5">
+        <div className="max-w-[1500px] mx-auto">
+          <h2 className="font-bold text-2xl text-[#8B0000] uppercase mb-2 md:text-4xl md:mb-4">About us</h2>
+          <div>
+            <p className="mb-2 text-black">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, alias veritatis? Provident nobis consectetur, dicta dignissimos maxime fugiat officiis deleniti.
+            </p>
+            <p className="mb-5 text-black">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, consectetur animi. Quam dolores accusantium impedit unde? Dignissimos sapiente nam maiores repudiandae ipsum quis eligendi aliquid numquam dicta minus, sint tenetur ab? Blanditiis sed illum recusandae modi tempora laudantium dolor itaque vero non hic, ab nulla molestiae,
+              eaque est esse voluptatem error! Omnis eaque, culpa at consectetur illum vel porro distinctio.
+            </p>
+            <div className="flex flex-col-reverse md:flex-row md:gap-5">
+              <div className="w-full md:w-[70%]">
+                <div className="relative overflow-hidden text-white/50 w-full h-[200px] flex items-center justify-center mb-4 rounded-md md:h-[400px]">
+                  <Image src="/img/home-about.webp" alt="about here" width={1000} height={574} className="absolute w-full h-full object-cover" />
+                </div>
+
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit perferendis nostrum eius quaerat dolor,
-                unde rerum aut? Modi velit nesciunt, qui accusamus cum vero odit non dolore placeat error quae iusto culpa aperiam deserunt quos.
-                Eum alias explicabo veritatis aut soluta rerum, illo eius corporis, voluptates omnis amet accusantium saepe.
-              </p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit perferendis nostrum eius quaerat dolor,
-                unde rerum aut? Modi velit nesciunt, qui accusamus cum vero odit non dolore placeat error quae iusto culpa aperiam deserunt quos.
-                Eum alias explicabo veritatis aut soluta rerum, illo eius corporis, voluptates omnis amet accusantium saepe.
-              </p>
+              <div className="w-full md:w-[30%]">
+                <p className="text-black">
+                  <strong className="md:text-2xl md:font-bold md:uppercase">Lorem ipsum</strong>
+                  , dolor sit amet consectetur adipisicing elit. Accusantium numquam provident, quas tempore odio magnam, eligendi voluptatibus, iusto cumque dicta ab culpa temporibus modi saepe consequuntur? Magnam dolorem ullam
+                  consequuntur quos exercitationem quis eaque aut obcaecati nulla ab laudantium ad eligendi laborum quaerat quasi, illo a mollitia possimus voluptate eum.
+                </p>
+                <p className="text-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae error tenetur officia fugit nulla ea veritatis enim. A quas quaerat fugiat
+                  est assumenda iusto. Veritatis sequi veniam cupiditate debitis exercitationem delectus quisquam
+                  recusandae numquam esse doloremque, alias commodi animi necessitatibus maiores optio quod corporis sunt explicabo voluptate architecto obcaecati velit!
+                </p>
+              </div>
             </div>
-            <CurrentMatch />
           </div>
         </div>
       </section>
 
       <section className="max-w-[1500px] mx-auto py-4 px-2 rounded-md mt-10 md:py-1 md:px-4">
-        <h2 className="font-bold text-2xl mb-2 md:text-4xl md:mb-4">Standings</h2>
-        <TeamStandings />
+        <h2 className="font-bold text-2xl text-[#8B0000] uppercase mb-2 md:text-4xl md:mb-10">Players</h2>
+
+        {players.map((player) => (
+          <div key={player.no} className="max-w-[1577px] h-[150px] flex items-center justify-between md:mt-15">
+            <div className="w-[100px] text-[80px] font-bold text-gray-800 hidden md:block">{player.no}</div>
+            <div className="flex flex-col items-center justify-between bg-[linear-gradient(to_bottom,#AC0E10,#460607)] md:flex-1  md:bg-[url(/img/players/BG-RCB-PLAYER.webp)] md:bg-no-repeat md:bg-contain md:flex-row">
+              <div className="relative flex items-center justify-center h-full px-6 text-white font-bold text-xl w-full md:w-[75%] md:justify-normal">
+                <Image
+                  src={player.icon}
+                  alt="Virat Kohli"
+                  width={310}
+                  height={210}
+                  className="object-contain md:-mt-20 md:-ml-6 md:h-full "
+                />
+                <span className="uppercase md:ml-6 md:text-[26px]">{player.name}</span>
+              </div>
+              <div className="uppercase text-white font-bold md:text-[26px] md:w-[25%] md:text-xl">
+                {player.role}
+              </div>
+            </div>
+          </div>
+        ))}
       </section>
 
       <section className="max-w-[1500px] mx-auto py-4 px-2 rounded-md mt-10 md:py-1 md:px-4">

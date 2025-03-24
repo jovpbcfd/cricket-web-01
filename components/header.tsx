@@ -20,7 +20,7 @@ function Close() {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
             strokeLinecap="round" strokeLinejoin="round"
-            className="lucide lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" />
+            className="text-white"><path d="M18 6 6 18" /><path d="m6 6 12 12" />
         </svg>
     )
 }
@@ -29,12 +29,12 @@ export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
-            <header className="bg-gradient-to-r from-[#57534e] to-[#282828] shadow-md relative w-full top-0 left-0 z-50">
+            <header className="bg-[linear-gradient(to_right,#AC0E10_17%,#D20C14_81%)] shadow-md relative w-full top-0 left-0 z-50">
                 <div className="max-w-7xl mx-auto px-4 py-2 sm:px-6 md:py-4 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
+                    <div className="flex justify-between items-center h-25">
                         {/* Logo */}
-                        <Link href="/">
-                            <Image src="/img/site-logo1.webp" alt="Logo" className="h-16" width={100} height={100} />
+                        <Link href="/" className="">
+                            <Image src="/img/rcb-logo.webp" alt="Logo" className="h-20 w-20" width={100} height={120} />
                         </Link>
 
                         {/* Desktop Navigation */}
@@ -55,7 +55,7 @@ export default function Header() {
 
                 {/* Mobile Navigation */}
                 {isOpen && (
-                    <nav className="md:hidden bg-gradient-to-r from-[#57534e] to-[#282828] shadow-md absolute w-full left-0 top-16 flex flex-col space-y-4 p-4">
+                    <nav className="md:hidden bg-[linear-gradient(to_right,#AC0E10_17%,#D20C14_81%)] shadow-md absolute w-full left-0 top-16 flex flex-col space-y-4 p-4">
                         <Link href="/" className="text-white hover:text-white/50" onClick={() => setIsOpen(false)}>Home</Link>
                         <Link href="/news" className="text-white hover:text-white/50" onClick={() => setIsOpen(false)}>News</Link>
                         <Link href="/matches" className="text-white hover:text-white/50" onClick={() => setIsOpen(false)}>Matches</Link>
