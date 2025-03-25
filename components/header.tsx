@@ -34,7 +34,7 @@ export default function Header() {
                     <div className="flex justify-between items-center h-25">
                         {/* Logo */}
                         <Link href="/" className="">
-                            <Image src="/img/rcb-logo.webp" alt="Logo" className="h-20 w-20" width={100} height={120} />
+                            <Image src="/img/teams/RCBoutline.webp" alt="Logo" className="h-20 w-20" width={100} height={120} />
                         </Link>
 
                         {/* Desktop Navigation */}
