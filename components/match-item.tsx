@@ -24,9 +24,9 @@ type Teams = {
     over: string
 }
 
-const SkeletonLine = ({ width, height = "20px" }: { width: string; height?: string }) => (
-    <div className="bg-[#323232] rounded-md animate-pulse mx-auto" style={{ width, height }}></div>
-);
+// const SkeletonLine = ({ width, height = "20px" }: { width: string; height?: string }) => (
+//     <div className="bg-[#323232] rounded-md animate-pulse mx-auto" style={{ width, height }}></div>
+// );
 
 
 export default function MatchItem({ match }: { match: Match | undefined }) {
