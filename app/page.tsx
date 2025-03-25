@@ -135,13 +135,8 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="max-w-[1500px] mx-auto py-4 px-2 rounded-md mt-10 md:py-1 md:px-4">
-        <div className="max-w-6xl mx-auto p-6">
-          <div className="grid grid-cols-2 text-center font-bold text-lg md:text-2xl pb-4">
-            <h2>MEN'S TEAM PARTNERS</h2>
-            <h2>WOMEN'S TEAM PARTNERS</h2>
-          </div>
-
+      <section className="py-4 px-2 rounded-md mt-5 md:py-1 md:px-4 md:mt-10 md:mb-10">
+        <div className="max-w-[1500px] mx-auto">
           <TeamPartners />
         </div>
       </section>
