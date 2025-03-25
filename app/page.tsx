@@ -111,13 +111,15 @@ export default function Home() {
       </section>
 
       <section className="max-w-[1500px] mx-auto py-4 px-2 rounded-md mt-10 md:py-1 md:px-4">
-        <h2 className="font-bold text-2xl text-[#8B0000] uppercase mb-2 md:text-4xl md:mb-10">Players</h2>
+        <div className="max-w-[1577px] py-2 mx-auto text-center bg-[linear-gradient(to_bottom,#AC0E10,#460607)] md:py-4">
+          <h2 className="font-bold text-2xl text-white uppercase md:text-4xl">Players</h2>
+        </div>
 
         {players.map((player) => (
           <div key={player.no} className="max-w-[1577px] h-[150px] flex items-center justify-between md:mt-15">
             <div className="w-[100px] text-[80px] font-bold text-gray-800 hidden md:block">{player.no}</div>
-            <div className="flex flex-col items-center justify-between bg-[linear-gradient(to_bottom,#AC0E10,#460607)] md:flex-1  md:bg-[url(/img/players/BG-RCB-PLAYER.webp)] md:bg-no-repeat md:bg-contain md:flex-row">
-              <div className="relative flex items-center justify-center h-full px-6 text-white font-bold text-xl w-full md:w-[75%] md:justify-normal">
+            <div className="flex flex-col items-center justify-between bg-[linear-gradient(to_bottom,#AC0E10,#460607)] md:flex-1 md:bg-[url(/img/players/BG-RCB-PLAYER.webp)] md:bg-no-repeat md:flex-row">
+              <div className="relative flex items-center justify-center h-full px-6 text-white font-bold text-xl w-full md:w-full md:justify-normal">
                 <Image
                   src={player.icon}
                   alt="Virat Kohli"
@@ -135,13 +137,8 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="max-w-[1500px] mx-auto py-4 px-2 rounded-md mt-10 md:py-1 md:px-4">
-        <div className="max-w-6xl mx-auto p-6">
-          <div className="grid grid-cols-2 text-center font-bold text-lg md:text-2xl pb-4">
-            <h2>MEN'S TEAM PARTNERS</h2>
-            <h2>WOMEN'S TEAM PARTNERS</h2>
-          </div>
-
+      <section className="py-4 px-2 rounded-md mt-5 md:py-1 md:px-4 md:mt-10 md:mb-10">
+        <div className="max-w-[1500px] mx-auto">
           <TeamPartners />
         </div>
       </section>
