@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 type Match = {
     id: string;
@@ -12,7 +13,16 @@ type Match = {
     league: string;
     team1Short: string;
     team2Short: string;
+    location: string;
+    teams: Teams[]
 };
+
+type Teams = {
+    banner: string;
+    name: string;
+    score: string;
+    over: string
+}
 
 const SkeletonLine = ({ width, height = "20px" }: { width: string; height?: string }) => (
     <div className="bg-[#323232] rounded-md animate-pulse mx-auto" style={{ width, height }}></div>
@@ -34,86 +44,70 @@ export default function MatchItem({ match }: { match: Match | undefined }) {
 
     return (
         <>
-            <div className="max-w-[1500px] mx-auto py-4 px-2 rounded-md md:py-1 md:px-4">
-                <div className="max-w-[500px] w-full mx-auto flex flex-col items-center justify-center md:mt-16 md:mb-10 md:gap-10">
-                    <div className="border-b border-[#4b4b4b] mb-8 pb-10 w-full text-center md:mb-0">
-                        <h1>
-                            {loading ? (
-                                <SkeletonLine width="60%" height="40px" />
-                            ) : (
-                                <>
-                                    <span className="font-bold text-xl md:text-5xl">{matches?.team1}</span>
-                                    <span>{" "}</span>
-                                    <span className="text-2xl">vs</span>
-                                    <span>{" "}</span>
-                                    <span className="font-bold text-xl md:text-5xl">{matches?.team2}</span>
-                                </>
-                            )}
-                        </h1>
+            <div className='bg-[url(/img/bg-page-matches.webp)] bg-no-repeat'>
+                <div className="max-w-[1500px] mx-auto py-4 px-2 rounded-md md:py-10 md:px-4">
+                    <div className="max-w-[939px] w-full mx-auto">
+                        <div className='bg-[#1E1E1E] py-5 px-10 text-center'>
+                            <span className='md:mr-2'>{matches?.league}</span> |
+                            <span className='md:mx-2'>{matches?.date}</span> |
+                            <span className='md:ml-2'>{matches?.time} IST</span>
+                        </div>
+                        <div className='bg-[#FFFFFF] text-[#1E1E1E] text-center py-5'>
+                            <h1 className=' uppercase text-md font-bold md:text-[40px] md:font-[900] md:leading-[50px]'>
+                                {matches?.team1}
+                                <span className='mx-2 text text-[#ac0e10]'>vs</span>
+                                {matches?.team2}
+                            </h1>
+                        </div>
+                        <div className='bg-gradient-to-r from-[#460607] via-[#AC0E10] to-[#460607] py-5 md:py-10'>
+                            <div className='flex items-center justify-center'>
+                                <div className='flex items-center gap-2 md:gap-5'>
+                                    <div className='bg-[#FFFFFF] rounded-full flex items-center justify-center md:w-[150px] md:h-[150px]'>
+                                        {loading ? (<div className="md:w-[150px] md:h-[150px] bg-gray-300 rounded-full animate-pulse"></div>) : (
+                                            <Image src={matches?.teams[0].banner as string} width={100} height={100} alt={matches?.teams[0].name as string} />
+                                        )}
+                                    </div>
+                                    <div className='text-center self-end'>
+                                        <div className='font-[900] bg-[#D8BD74] p-2 text-[#8B0000] rounded-md md:leading-[50px] md:text-[40px]'>
+                                            {matches?.teams[0].score}
+                                        </div>
+                                        <p className='text-white font-bold md:text-[20px] md:pt-2'>{matches?.teams[0].over}</p>
+                                    </div>
+                                </div>
+                                <span className='font-bold text-3xl md:text-6xl md:mx-10'>-</span>
+                                <div className='flex flex-row-reverse items-center gap-2 md:gap-5'>
+                                    <div className='bg-[#FFFFFF] rounded-full flex items-center justify-center md:w-[150px] md:h-[150px]'>
+                                        {loading ? (<div className="md:w-[150px] md:h-[150px] bg-gray-300 rounded-full animate-pulse"></div>) : (
+
+                                            <Image src={matches?.teams[1].banner as string} width={100} height={100} alt={matches?.teams[1].name as string} />
+                                        )}
+                                    </div>
+                                    <div className='text-center self-end'>
+                                        <div className='font-[900] bg-[#D8BD74] p-2 text-[#8B0000] rounded-md md:leading-[50px] md:text-[40px]'>
+                                            {matches?.teams[1].score}
+                                        </div>
+                                        <p className='text-white font-bold md:text-[20px] md:pt-2'>{matches?.teams[1].over}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p className='uppercase text-center font-bold text-[20px] p-[10px] md:mt-5'>{matches?.location}</p>
+                        </div>
+                        <div>
+                            <h2 className='text-center text-[#282828] py-3 font-bold uppercase md:font-[900] md:text-[40px] md:leading-[50px] md:py-10'>Match information</h2>
+                            <div className="bg-[url(/img/match-info-bg.webp)]  bg-no-repeat w-full mx-auto h-40 text-white font-semibold flex">
+                                <div className="w-1/2 flex flex-col justify-around p-4">
+                                    <p><span className="font-bold">MATCH:</span> {matches?.league}</p>
+                                    <p><span className="font-bold">DATE:</span> {matches?.date}</p>
+                                    <p><span className="font-bold">TIME:</span> 04:00</p>
+                                </div>
+                                <div className="w-1/2 flex flex-col justify-around p-4 text-right">
+                                    <p><span className="font-bold">TEAM 1:</span> {matches?.team1}</p>
+                                    <p><span className="font-bold">TEAM 2:</span> {matches?.team2}</p>
+                                    <p><span className="font-bold">ODDS:</span> {matches?.odds[0]} | {matches?.odds[1]} | {matches?.odds[2]}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="flex  items-center mb-8 gap-10 md:gap-18 md:justify-around md:mb-0">
-                        <div className="text-center">
-                            <div className="bg-cyan-500 rounded-full w-12 h-12 md:w-22 md:h-22"></div>
-                            <div className="mt-2">{loading ? <SkeletonLine width="50px" /> : matches?.team1Short}</div>
-                        </div>
-                        <div className="text-center">
-                            <div className="flex items-center gap-2 mb-2 justify-center md:justify-normal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                                    className="text-[#57534e] w-5 h-5 w-5 h-5 hidden md:inline-block"><path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" /><path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17" /><path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05" /><circle cx="12" cy="12" r="10" /></svg>
-                                {loading ? <SkeletonLine width="120px" /> :
-                                    matches?.league}
-                            </div>
-                            <div className="flex items-center gap-2 mb-2 justify-center md:justify-normal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                                    className="text-[#57534e] w-5 h-5 hidden md:inline-block">
-                                    <path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" /><path d="M8 14h.01" /><path d="M12 14h.01" /><path d="M16 14h.01" /><path d="M8 18h.01" />
-                                    <path d="M12 18h.01" />
-                                    <path d="M16 18h.01" />
-                                </svg>
-                                {loading ? <SkeletonLine width="120px" /> : matches?.date}
-                            </div>
-                            <div className="flex items-center gap-2 justify-center md:justify-normal">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                                    className="text-[#57534e] w-5 h-5 w-5 h-5 hidden md:inline-block"><line x1="10" x2="14" y1="2" y2="2" /><line x1="12" x2="15" y1="14" y2="11" /><circle cx="12" cy="14" r="8" /></svg>
-                                {loading ? <SkeletonLine width="80px" /> : matches?.time}
-                            </div>
-                        </div>
-                        <div className="text-center">
-                            <div className="bg-red-500 rounded-full w-12 h-12 md:w-22 md:h-22"></div>
-                            <div className="mt-2">{loading ? <SkeletonLine width="50px" /> : matches?.team2Short}</div>
-                        </div>
-                    </div>
-                    <button
-                        className={`w-full py-3 rounded-md font-bold cursor-pointer transition my-2 md:my-0 ${loading ? "bg-[#323232] cursor-not-allowed" : "bg-green-600"
-                            }`}
-                        disabled={loading}
-                    >
-                        {loading ? "Loading..." : "PLACE BET"}
-                    </button>
-                </div>
-            </div>
-            <div className="max-w-[800px] mx-auto py-4 px-2">
-                <h2 className="text-center font-bold text-2xl mb-2">Match Info</h2>
-                <div className="mt-5 mb-10">
-                    <table className="w-full border-collapse border border-[#4b4b4b]">
-                        <tbody>
-                            {[
-                                ['Match:', match?.league],
-                                ['Date:', match?.date],
-                                ['Time:', match?.time],
-                                ['Team 1:', match?.team1],
-                                ['Team 2:', match?.team2],
-                                ['Odds:', match ? match.odds.join(' | ') : null],
-                            ].map(([label, value], index) => (
-                                <tr key={index} className="border border-[#4b4b4b]">
-                                    <td className="p-2 font-semibold border border-[#4b4b4b] bg-[#57534e] w-22">{label}</td>
-                                    <td className="p-2 border border-[#4b4b4b]">{!loading ? (
-                                        value
-                                    ) : (<div className="h-4 bg-[#323232] rounded w-3/4 animate-pulse"></div>)}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </>

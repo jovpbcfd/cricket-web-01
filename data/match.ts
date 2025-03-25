@@ -15,7 +15,7 @@ export const matches = [
         team1Short: "team1",
         team2Short: "team2",
         teams: [
-            { banner: '/img/teams/MIoutline.webp', name: "Mumbai Indians", score: '149/7', over: '20.0' },
+            { banner: '/img/teams/MIoutline.webp', name: "Mumbai Indians", score: '149/07', over: '20.0' },
             { banner: '/img/teams/DCoutline.webp', name: "Delhi Capitals", score: '141/09', over: '20.0' },
         ]
     },
@@ -57,7 +57,7 @@ export const matches = [
         location: 'Bharat ratna shri ata bihari vajpayee ekana cricket stadium, lucknow',
         teams: [
             { banner: '/img/teams/SRHoutline.webp', name: "Sunrisers Hyderabad", score: '128/08', over: '20.0' },
-            { banner: '/img/teams/LSGoutline.webp', name: "Lucknow Super Giants", score: '127/5', over: '16.0' },
+            { banner: '/img/teams/LSGoutline.webp', name: "Lucknow Super Giants", score: '127/05', over: '16.0' },
         ]
     },
     {
@@ -66,8 +66,8 @@ export const matches = [
         team2Short: "team2",
         location: 'Barsapara Cricket Stadium, Guwahati',
         teams: [
-            { banner: '/img/teams/DCoutline.webp', name: "Delhi Capitals", score: '142/9', over: '20.0' },
-            { banner: '/img/teams/RRoutline.webp', name: "Rajasthan Royals", score: '199/4', over: '20.0' },
+            { banner: '/img/teams/DCoutline.webp', name: "Delhi Capitals", score: '142/09', over: '20.0' },
+            { banner: '/img/teams/RRoutline.webp', name: "Rajasthan Royals", score: '199/04', over: '20.0' },
         ]
     },
     {
@@ -76,8 +76,8 @@ export const matches = [
         team2Short: "team2",
         location: 'Wankhede Stadium, Mumbai',
         teams: [
-            { banner: '/img/teams/CSKroundbig.webp', name: "Chennai Super Kings", score: '159/3', over: '20.0' },
-            { banner: '/img/teams/MIoutline.webp', name: "Mumbai Indians", score: '157/8', over: '19.1' },
+            { banner: '/img/teams/CSKroundbig.webp', name: "Chennai Super Kings", score: '159/03', over: '20.0' },
+            { banner: '/img/teams/MIoutline.webp', name: "Mumbai Indians", score: '157/08', over: '19.1' },
         ]
     },
     {
@@ -86,8 +86,8 @@ export const matches = [
         team2Short: "team2",
         location: 'Narendra Modi Stadium, Ahmedabad',
         teams: [
-            { banner: '/img/teams/KKRoutline.webp', name: "Kolkata Knight Riders", score: '207/7', over: '20.0' },
-            { banner: '/img/teams/GToutline.webp', name: "Gujarat Titans", score: '204/4', over: '20.0' },
+            { banner: '/img/teams/KKRoutline.webp', name: "Kolkata Knight Riders", score: '207/07', over: '20.0' },
+            { banner: '/img/teams/GToutline.webp', name: "Gujarat Titans", score: '204/04', over: '20.0' },
         ]
     },
     {
@@ -96,8 +96,8 @@ export const matches = [
         team2Short: "team2",
         location: 'Rajiv Gandhi International Stadium, Hyderabad',
         teams: [
-            { banner: '/img/teams/SRHoutline.webp', name: "Sunrisers Hyderabad", score: '145/2', over: '17.1' },
-            { banner: '/img/teams/PBKSoutline.webp', name: "Punjab Kings", score: '143/9', over: '20' },
+            { banner: '/img/teams/SRHoutline.webp', name: "Sunrisers Hyderabad", score: '145/02', over: '17.1' },
+            { banner: '/img/teams/PBKSoutline.webp', name: "Punjab Kings", score: '143/09', over: '20' },
         ]
     },
     {
@@ -112,8 +112,8 @@ export const matches = [
         team2Short: "team2",
         location: 'M Chinnaswamy Stadium, Bengaluru',
         teams: [
-            { banner: '/img/teams/LSGoutline.webp', name: "Lucknow Super Giants", score: '213/9', over: '20.0' },
-            { banner: '/img/teams/RCBoutline.webp', name: "Royal Challengers Bangalore", score: '212/2', over: '20' },
+            { banner: '/img/teams/LSGoutline.webp', name: "Lucknow Super Giants", score: '213/09', over: '20.0' },
+            { banner: '/img/teams/RCBoutline.webp', name: "Royal Challengers Bangalore", score: '212/02', over: '20' },
         ]
     },
     {
@@ -128,7 +128,7 @@ export const matches = [
         team2Short: "team2",
         location: 'Arun Jaitley Stadium, Delhi',
         teams: [
-            { banner: '/img/teams/MIoutline.webp', name: "Mumbai Indians", score: '173/4', over: '20.0' },
+            { banner: '/img/teams/MIoutline.webp', name: "Mumbai Indians", score: '173/04', over: '20.0' },
             { banner: '/img/teams/DCoutline.webp', name: "Delhi Capitals", score: '172/10', over: '19.4' },
         ]
     },
