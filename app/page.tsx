@@ -116,21 +116,26 @@ export default function Home() {
         </div>
 
         {players.map((player) => (
-          <div key={player.no} className="max-w-[1577px] h-[150px] flex items-center justify-between md:mt-15">
+          <div key={player.no} className="max-w-[1577px] w-full mt-2 h-[194px] md:flex md:items-center md:justify-between md:mt-15 md:h-[150px]">
             <div className="w-[100px] text-[80px] font-bold text-gray-800 hidden md:block">{player.no}</div>
-            <div className="flex flex-col items-center justify-between bg-[linear-gradient(to_bottom,#AC0E10,#460607)] md:flex-1 md:bg-[url(/img/players/BG-RCB-PLAYER.webp)] md:bg-no-repeat md:flex-row">
-              <div className="relative flex items-center justify-center h-full px-6 text-white font-bold text-xl w-full md:w-full md:justify-normal">
+            <div className="flex flex-row items-center justify-center h-full bg-[url(/img/players/bg-player-mobile.webp)] bg-cover bg-center bg-no-repeat 
+            md:flex-1 md:bg-[url(/img/players/BG-RCB-PLAYER.webp)] md:bg-no-repeat md:flex-row"
+            >
+              <div className="relative hidden h-full text-white font-bold text-xl w-full md:px-6 md:flex md:items-center md:justify-normal">
                 <Image
                   src={player.icon}
                   alt="Virat Kohli"
                   width={310}
                   height={210}
-                  className="object-contain md:-mt-20 md:-ml-6 md:h-full "
+                  className="object-contain md:-ml-6 md:h-full"
                 />
-                <span className="uppercase md:ml-6 md:text-[26px]">{player.name}</span>
+                <span className="hidden uppercase md:ml-6 md:text-[26px] md:block">{player.name}</span>
               </div>
-              <div className="uppercase text-white font-bold md:text-[26px] md:w-[25%] md:text-xl">
-                {player.role}
+              <div className="self-center pr-4 uppercase text-white font-bold md:text-[26px] md:w-[25%] md:text-xl md:pr-0 md:self-center">
+                <p className="text-[24px] leading-4 md:hidden">{player.name}</p>
+                <p className="mt-2 md:mt-0">
+                  {player.role}
+                </p>
               </div>
             </div>
           </div>
