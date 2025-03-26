@@ -34,8 +34,8 @@ export default function TeamPartners() {
                 <div>
                     <div className="text-center md:mb-5">
                         <h3 className="uppercase text-[#282828] md:text-[32px] md:leading-[37px] md:font-bold md:mb-5">Principal partners</h3>
-                        <div className="flex items-center justify-center gap-10">
-                            <Image src="/img/W2024_lotus_herbals.webp" alt="Lotus Herbals" width={200} height={100} />
+                        <div className="flex flex-col items-center justify-center md:gap-10">
+                            <Image src="/img/W2024_lotus_herbals.webp" alt="Lotus Herbals" width={200} height={100} className="w-[100px] h-[100px]" />
                             <Image src="/img/W2024_ashok_leyland.webp" alt="Ashok Leyland" width={245} height={100} />
                         </div>
                     </div>
@@ -48,7 +48,7 @@ export default function TeamPartners() {
                     </div>
                     <div className="text-center md:mb-5">
                         <h3 className="uppercase text-[#282828] md:text-[32px] md:leading-[37px] md:font-bold md:mb-5">Official partners</h3>
-                        <div className="flex flex-col items-center justify-center gap-2 md:flex-row">
+                        <div className="grid grid-cols-2 md:grid-cols-4">
                             <Image src="/img/W2024_USHA.webp" alt="Usha" width={106} height={60} />
                             <Image src="/img/W2024_lovechild.webp" alt="Lovechild" width={106} height={60} className="bg-white" />
                             <Image src="/img/DHL.webp" alt="DHL" width={106} height={60} />
